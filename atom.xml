@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.kaino3.com</id>
+    <title>硝酸凯部落格</title>
+    <updated>2022-07-22T23:20:49.195Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://www.kaino3.com"/>
+    <link rel="self" href="https://www.kaino3.com/atom.xml"/>
+    <subtitle>一个孤独的人</subtitle>
+    <logo>https://www.kaino3.com/images/avatar.png</logo>
+    <icon>https://www.kaino3.com/favicon.ico</icon>
+    <rights>All rights reserved 2022, 硝酸凯部落格</rights>
+    <entry>
+        <title type="html"><![CDATA[K40开箱]]></title>
+        <id>https://www.kaino3.com/20210618/</id>
+        <link href="https://www.kaino3.com/20210618/">
+        </link>
+        <updated>2021-06-18T12:27:58.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[移动nfc-sim公交卡分享]]></title>
+        <id>https://www.kaino3.com/20210310/</id>
+        <link href="https://www.kaino3.com/20210310/">
+        </link>
+        <updated>2021-03-10T12:26:24.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AMD水泥硅脂]]></title>
+        <id>https://www.kaino3.com/20210301/</id>
+        <link href="https://www.kaino3.com/20210301/">
+        </link>
+        <updated>2021-03-01T12:25:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[小米65W氮化镓开箱]]></title>
+        <id>https://www.kaino3.com/20200912/</id>
+        <link href="https://www.kaino3.com/20200912/">
+        </link>
+        <updated>2020-09-12T12:23:17.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[steam常用挂卡软件+卖卡脚本]]></title>
+        <id>https://www.kaino3.com/20200909/</id>
+        <link href="https://www.kaino3.com/20200909/">
+        </link>
+        <updated>2020-09-09T12:21:51.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[穷人的wifi6-TY400]]></title>
+        <id>https://www.kaino3.com/20200523/</id>
+        <link href="https://www.kaino3.com/20200523/">
+        </link>
+        <updated>2020-05-23T12:20:40.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[小软件安利-小米互传 互传联盟的都能用（2021年更新）]]></title>
+        <id>https://www.kaino3.com/20200517/</id>
+        <link href="https://www.kaino3.com/20200517/">
+        </link>
+        <updated>2020-05-17T07:54:28.000Z</updated>
+    </entry>
+</feed>
