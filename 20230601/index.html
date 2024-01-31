@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="硝酸凯的部落格">
+<meta name="description" content="一个孤独的人">
+<meta name="theme-color" content="#000">
+<title>gridea部署静态博客 | 硝酸凯部落格</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1706698491901">
+<link rel="stylesheet" href="/media/css/pisces.css">
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link
+  href="//fonts.loli.net/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+  rel="stylesheet" type="text/css">
+
+<link href="/media/hljs/styles/androidstudio.css"
+  rel="stylesheet">
+
+<link rel="stylesheet" href="/styles/main.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/media/js/jquery.js"></script>
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?429b7443a8224a2e9032e1b201c2376c";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+  <meta name="description" content="gridea部署静态博客" />
+  <meta name="keywords" content="" />
+</head>
+
+<body>
+  <div class="head-top-line"></div>
+  <div class="header-box">
+    
+<div class="pisces">
+  <header class="header  ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>硝酸凯部落格</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">一个孤独的人</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                
+                  <a href="https://www.kaino3.com" target="_self">
+                    🏠 首页
+                  </a>
+                
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                
+                  <a href="https://www.kaino3.com/archives" target="_self">
+                    <i class="fa fa-archive"></i> 归档
+                  </a>
+                
+              
+            </li>
+          
+          
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_self">
+                  
+                    <i class="fa fa-address-book"></i> 友链
+                  
+                </a>
+              </li>
+            
+          
+          
+            <li id="fa_search" class="nav-item">
+              <a href="javascript:void(0);">
+                <i class="fa fa-search"></i> <span class="language" data-lan="search">搜索</span>
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+  </div>
+  <div class="main-continer">
+    
+    <div
+      class="section-layout pisces ">
+      <div class="section-layout-wrapper">
+        
+
+<div class="sidebar">
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    jQuery.Velocity(hideElement, 'stop');
+    jQuery.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        jQuery.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://www.kaino3.com/20230601/"> gridea部署静态博客 </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2023-06-01 19:50:50">2023-06-01</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span
+        >4<span class="language" data-lan="minute"
+          >分钟</span
+        ></span
+      >
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span
+        >959<span class="pc-show language" data-lan="words"
+          >字数</span
+        ></span
+      >
+    </span>
+    
+  </div>
+</section>
+
+            <div class="post-body next-md-body" id="post_body">
+              <p>gridea是一个个静态博客的客户端<br>
+相对于hugo和hexo啥的，最大的好处就是简单，不用配置啥复杂的东西<br>
+缺点，就是主题很少<br>
+本文用github仓库部署，可以同时直接用仓库部署到github pages，cf pages，vercel，netlify，国内访问推荐vercel<br>
+由于这几个默认域名无法访问，需要绑个自己的域名</p>
+<p>一   配置github<br>
+①没号的先注册一个<br>
+<a href="https://github.com/">https://github.com/</a><br>
+点击右上角singup注册一个<br>
+②创建github仓库<br>
+<a href="https://github.com/new">https://github.com/new</a><br>
+创建个username.github.io，username就是你用户名，其实也可以不这样子，仓库名随便取，只是没法用github pages而已，不影响部署到cf pages和vercel的<br>
+③申请token<br>
+<a href="https://github.com/settings/tokens/new">https://github.com/settings/tokens/new</a><br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/138712/8/38368/78918/64926521F031960ec/cb3cfc5ca2b42970.png" alt="img" loading="lazy"><br>
+token时间自己爱要多久，反正我直接永久，repo勾上，token只显示一次，记得保存下</p>
+<p>二 配置gridea<br>
+①下载</p>
+<p><a href="https://github.com/getgridea/gridea/releases">https://github.com/getgridea/gridea/releases</a><br>
+自己根据客户端下载<br>
+支持mac，win，linux三大系统<br>
+②配置<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/136809/33/36153/91652/6492653fF9c321c05/90b353d512cc395e.png" alt="img" loading="lazy"><br>
+点击左边的远程，界面长这样子<br>
+选择github pages，<br>
+域名:你要绑的域名<br>
+仓库名称:刚刚建的github的仓库的名字:username.github.io这样子<br>
+分支，现在一般默认是main，自己看下你github仓库<br>
+仓库用户名,你github的user name<br>
+邮箱，你github的邮箱<br>
+令牌，刚刚第三步申请的token<br>
+cname这个不用github pages啥的话不用管，要用的话填你要绑的域名</p>
+<p>然后保存，再点下检测远程连接的，显示成功的话就ok了<br>
+③备份<br>
+点击最左边这个按钮，点进去，有个站点源文件路径，那就是gridea的配置文件了，要备份的话直接打包上传到网盘，或者直接整个坚果云或者onedrive啥的同步直接<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/122232/5/37159/6926/64926557Fce9c857b/42cf6972fc6321ca.png" alt="img" loading="lazy"><br>
+④写文章<br>
+支持markdown，点击左边的文章，自己写<br>
+⑤点击左下角同步，同步到你github<br>
+如果没法同步的话，设置里，自己填写</p>
+<p>三 部署到各家平台<br>
+1github pages<br>
+找到你username.github.io的仓库，点击setting，选择pages启用，可以绑定自己的域名，不展开讲了，自己搜下</p>
+<p>2部署到cf pages（推荐）<br>
+①注册cf账户<br>
+<a href="https://cloudflare.com/">https://cloudflare.com/</a> 打开网站，点击注册<br>
+②创建pages<br>
+点击workes and pages<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/121938/24/36290/42514/64926574F8684e663/98fe0e45fe006324.png" alt="img" loading="lazy"><br>
+创建应用程序，选择pages<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/216500/18/32020/119943/64926588Ff650ae56/b2bffe5141036a6e.png" alt="img" loading="lazy"><br>
+连接到git<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/93932/25/36976/20853/649265c8Fe25b68a1/b917ba40b87b6c4b.png" alt="img" loading="lazy"><br>
+连接到github账户，选择你刚刚创建的那个github仓库<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/128213/25/38585/71130/649265e4F4592b509/74239f028897df98.png" alt="img" loading="lazy"><br>
+然后点开始设置<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/134074/26/39211/49056/6492662cFbe3351e3/4ea31568ee74d2f4.png" alt="img" loading="lazy"><br>
+保存并部署<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/141947/20/32111/44055/6492664eF223b46c1/c00bc1301c3facbe.png" alt="img" loading="lazy"><br>
+设置自定义域，默认的pages.dev无法访问，输入你在gridea里填的域名<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/151753/10/27188/91271/6492665fF809dd07d/53c03d3b5b71e777.png" alt="img" loading="lazy"><br>
+然后点激活域再等会就ok了<br>
+浏览器打开你的域名就可以访问了</p>
+<p>3部署到vercel<br>
+①<a href="https://vercel.com">https://vercel.com</a>   点击右上角singup，再点击用github登录<br>
+②点击add new project,选择你的github仓库，再点击import<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/205845/18/38588/21614/649266deF9b8c081f/6987753ca55e837a.png" alt="img" loading="lazy"><br>
+然后点击deploy直接部署<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/128408/26/40447/60437/649266d7Ffc74114a/fbecbc5cc34b20ce.png" alt="img" loading="lazy"><br>
+然后就部署好了<br>
+③设置自定义域，默认的vercel.app无法访问，输入你在gridea里填的域名<br>
+点击setting，选择左边的domains<br>
+在cloudflare或者别的域名解析商那里添加一个A记录到76.76.21.21<br>
+或者cname到cname.vercel-dns.com<br>
+都是可以的，具体怎么操作看vercel的文档<br>
+<a href="https://vercel.com/docs/concepts/projects/domains/working-with-nameservers">https://vercel.com/docs/concepts/projects/domains/working-with-nameservers</a><br>
+vercel的亚马逊aga到国内速度明显比其他的快，推荐这个部署，但是免费只有100G的流量，不过个人博客也够用了<br>
+4部署到netlify<br>
+①<a href="https://www.netlify.com/">https://www.netlify.com/</a>,点击右上角singup，选择github登录<br>
+②点击add new site<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/213472/14/32162/72634/64926683F2b66dd67/ac05c7df38f12111.png" alt="img" loading="lazy"><br>
+选择import an existing project<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/122625/26/37179/23931/64926696F795b3905/f90c68cb793a4e99.png" alt="img" loading="lazy"><br>
+选择你的github仓库，再点deploy site部署<br>
+<img src="https://img10.360buyimg.com/ott/jfs/t20250620/72533/36/24257/66884/649266a0F11e2900f/68a64f0b4673fa5a.png" alt="img" loading="lazy"></p>
+<p>③设置自定义域，默认的netlify.ap无法访问，输入你在gridea里填的域名<br>
+点击domain setting，然后把你的域名cname过去就行了，具体怎么弄看netlify的文档<br>
+<a href="https://docs.netlify.com/domains-https/custom-domains/">https://docs.netlify.com/domains-https/custom-domains/</a></p>
+
+            </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      JensenQian
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://www.kaino3.com/20230601/" title="gridea部署静态博客">https://www.kaino3.com/20230601/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="rclone挂载webdav,以infini-cloud为列" href="https://www.kaino3.com/20230618/">rclone挂载webdav,以infini-cloud为列</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="rclone挂载webdav,以infini-cloud为列" href="https://www.kaino3.com/20230618/">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="联想thinkbook14+开箱" href="https://www.kaino3.com/20220923/">联想thinkbook14+开箱</a>
+        <a class="nav-mobile-next" title="联想thinkbook14+开箱" href="https://www.kaino3.com/20220923/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+            
+            
+  
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-box">
+  <footer class="footer">
+    <center id="runTimeBox">
+      已运行:<span id="run_time"></span>
+    </center>
+    <span id="busuanzi_container_site_pv">浏览数:<span id="busuanzi_value_site_pv"></span> 次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">访客数:<span id="busuanzi_value_site_uv"></span> 人</span>
+
+    <script>
+      BirthDay = new Date('2019-01-01');
+      if (BirthDay.getTime()) {
+        function runTime() {
+          str = "";
+          today = new Date();
+          timeold = today.getTime() - BirthDay.getTime();
+          msPerDay = 24 * 60 * 60 * 1000;
+          e_daysold = timeold / msPerDay;
+          daysold = Math.floor(e_daysold);
+          str += daysold + "天";
+          return str;
+        }
+        setInterval(function () {
+          $("#run_time").html(runTime());
+        }, 1000);
+      } else {
+        document.querySelector('.footer').removeChild(document.querySelector('#runTimeBox'));
+      }
+    </script>
+    <div class="poweredby">
+      <br><a href="https://www.kaino3.com" target="_blank"> kaino3.com</a> by JensenQian（<a href="Mailto:JensenQian@kaino3.com">📧 E-Mail
+</a>）. <a href="https://www.kaino3.com/atom.xml" target="_blank">RSS</a><br>Powered by<a href="https://github.com/getgridea/gridea" 
+target="_blank">  Gridea</a>.Theme by <a
+        href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>.
+Hosted on   <a href="https://vercel.com" target="_blank">  Vercel</a>. 
+
+
+
+
+
+    </div>
+  </footer>
+  
+    
+        <div class="pisces back-to-top" id="back_to_top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span class="scrollpercent"> <span id="back_to_top_text">0</span>% </span>
+            
+        </div>
+        
+                  
+                        
+</div>
+<script>
+  let sideBarOpen = "sidebar-open";
+  let body = document.body;
+  let back2Top = document.querySelector("#back_to_top"),
+    back2TopText = document.querySelector("#back_to_top_text"),
+    drawerBox = document.querySelector("#drawer_box"),
+    rightSideBar = document.querySelector(".sidebar"),
+    viewport = document.querySelector("body");
+
+  function scrollAnimation(currentY, targetY) {
+    let needScrollTop = targetY - currentY;
+    let _currentY = currentY;
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10);
+      _currentY += dist;
+      window.scrollTo(_currentY, currentY);
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY);
+      } else {
+        window.scrollTo(_currentY, targetY);
+      }
+    }, 1);
+  }
+
+  back2Top.addEventListener("click", function (e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+
+  window.addEventListener("scroll", function (e) {
+    let percent =
+      (document.scrollingElement.scrollTop /
+        (document.scrollingElement.scrollHeight -
+          document.scrollingElement.clientHeight)) *
+      100;
+    if (percent > 1 && !back2Top.classList.contains("back-top-active")) {
+      back2Top.classList.add("back-top-active");
+    }
+    if (percent == 0) {
+      back2Top.classList.remove("back-top-active");
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+  let hasCacu = false;
+  window.addEventListener("resize", function (e) {
+    calcuHeight();
+  });
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (
+      (!hasCacu && back2Top.classList.contains("pisces")) ||
+      back2Top.classList.contains("gemini")
+    ) {
+      let sideBar = document.querySelector(".sidebar");
+      let navUl = document.querySelector("#site_nav");
+      sideBar.style =
+        "margin-top:" + (navUl.offsetHeight + navUl.offsetTop + 15) + "px;";
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+
+  let open = false,
+    MOTION_TIME = 300,
+    RIGHT_MOVE_DIS = "320px";
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll(".right-motion");
+    let right = drawerBox.classList.contains("right");
+
+    let transitionDir = right
+      ? "transition.slideRightIn"
+      : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS,
+      };
+      closeProp = {
+        paddingRight: "0px",
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS,
+      };
+      closeProp = {
+        paddingLeft: "0px",
+      };
+    }
+
+    drawerBox.onclick = function () {
+      open = !open;
+      jQuery.Velocity(rightSideBar, "stop");
+      jQuery.Velocity(viewport, "stop");
+      jQuery.Velocity(rightMotions, "stop");
+      if (open) {
+        jQuery.Velocity(
+          rightSideBar,
+          {
+            width: RIGHT_MOVE_DIS,
+          },
+          {
+            duration: MOTION_TIME,
+            begin: function () {
+              jQuery.Velocity(rightMotions, transitionDir, {});
+            },
+          }
+        );
+        jQuery.Velocity(viewport, openProp, {
+          duration: MOTION_TIME,
+        });
+      } else {
+        jQuery.Velocity(
+          rightSideBar,
+          {
+            width: "0px",
+          },
+          {
+            duration: MOTION_TIME,
+            begin: function () {
+              jQuery.Velocity(rightMotions, {
+                opacity: 0,
+              });
+            },
+          }
+        );
+        jQuery.Velocity(viewport, closeProp, {
+          duration: MOTION_TIME,
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle("muse-line");
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    };
+  }
+
+  // 链接跳转
+  let newWindow = "false";
+  if (newWindow === "true") {
+    let links = document.querySelectorAll(".post-body a");
+    links.forEach((item) => {
+      if (!item.classList.contains("btn")) {
+        item.setAttribute("target", "_blank");
+      }
+    });
+  }
+
+  let faSearch = document.querySelector("#fa_search");
+  faSearch &&
+    faSearch.addEventListener("click", function () {
+      document.querySelector("#search_mask").style = "";
+    });
+
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+
+  // 离开当前页title变化
+  var leaveTitle = "";
+  var normal_title = document.title;
+  if (leaveTitle) {
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState == "hidden") {
+        normal_title = document.title;
+        document.title = leaveTitle;
+      } else {
+        document.title = normal_title;
+      }
+    });
+  }
+</script>
+
+<link rel="stylesheet" href="/media/css/jquery.fancybox.css" />
+<script src="/media/js/jquery.fancybox.js"></script>
+
+<script>
+  let images = document.querySelectorAll(".section img");
+  images.forEach((image) => {
+    var parent = image.parentElement;
+    var next = image.nextElementSibling;
+    parent.removeChild(image);
+    var aelem = document.createElement("a");
+    aelem.href = image.src;
+    aelem.dataset["fancybox"] = "images";
+    aelem.dataset["rel"] = "fancybox-button";
+    aelem.classList.add("fancybox");
+    aelem.appendChild(image);
+    parent.insertBefore(aelem, next);
+  });
+</script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip"> </p>
+    </div>
+    <div class="bottom">
+      
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        jQuery.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        jQuery.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        jQuery.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        jQuery.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      jQuery.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      jQuery.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
+  </div>
+</body>
+
+  <div class="search-mask" id="search_mask" style="display: none;">
+  <div class="search-box">
+    <div class="search-title">
+      <i class="fa fa-search"></i>
+      <div class="input-box">
+        <input id="search" type="text" class="language" data-lan="search" placeholder="搜索">
+      </div>
+      <i id="close" class="fa fa-times-circle"></i>
+    </div>
+    <div class="stat-box">
+      <span id="stat_count">0</span><span class="language" data-lan="stat">条相关条目，使用了</span><span id="stat_times">0</span><span class="language" data-lan="stat-time">毫秒</span>
+      <hr>
+    </div>
+    <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20230629/"" data-c="
+          &lt;p&gt;cloudflare目前的话提供了四种证书，一种是自家一年的，还有let&#39;s的，谷歌的，都是三个月的，还有setcigo的三个月的，但是怎么没见到，之前的话一直都是一年的证书，现在基本上都是三个月的，主要是let&#39;s和谷歌的两种,，其实我们可以利用api来切换这，参考cloudflare的文档里的certificate authority&lt;br&gt;
+&lt;a href=&#34;https://developers.cloudflare.com/ssl/reference/certificate-authorities/&#34;&gt;https://developers.cloudflare.com/ssl/reference/certificate-authorities/&lt;/a&gt;&lt;br&gt;
+来切换四种证书，其实也可以完全不管，因为都是自动签的，let&#39;s的证书的话可能会导致部分旧平台，比方说旧安卓手机和win7的电脑兼容性不好，还有国产的360浏览器不把它添加进信任列表,所以切不切其实看你自己了&lt;br&gt;
+下面介绍两种办法来切证书，其实都是发起api来的，本质上一样的，只是第一种稍微简单点&lt;br&gt;
+首先都要申请global api key&lt;br&gt;
+&lt;a href=&#34;https://dash.cloudflare.com/profile/api-tokens&#34;&gt;https://dash.cloudflare.com/profile/api-tokens&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ddimg/jfs/t1/114283/29/33261/14822/64cc1932Faf7ea228/66621891be03516d.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+第一种方法&lt;br&gt;
+dnsfalre，这个是我之前用来修改以前cfp的cname接入的域名时候发现的，具体怎么玩可以参考这个大佬的博客&lt;a href=&#34;https://luotianyi.vc/6415.html&#34;&gt;https://luotianyi.vc/6415.html&lt;/a&gt;,可以自己部署，我们这次只是用来修改证书&lt;br&gt;
+作者github的项目地址&lt;a href=&#34;https://github.com/5aaee9/Dnsflare&#34;&gt;https://github.com/5aaee9/Dnsflare&lt;/a&gt;&lt;br&gt;
+我们直接用作者的演示站就行了，是本地浏览器发起api请求的&lt;br&gt;
+打开&lt;a href=&#34;https://dnsflare-indexyz.vercel.app/&#34;&gt;https://dnsflare-indexyz.vercel.app/&lt;/a&gt;，&lt;br&gt;
+输入你的邮箱和global api key&lt;br&gt;
+点击提交登录&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ddimg/jfs/t1/184435/18/36104/21120/64cc1946Fbc1c4a85/1589e7eaf6b41fee.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+选择你的域名&lt;br&gt;
+点击下面的证书供应商，就可以切换你的域名的证书了，选择digicert就是cf自家的一年的了，let&#39;s和谷歌的话就是三个月的，有cf自家当然选cf自家的了&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ddimg/jfs/t1/99576/40/38320/11881/64cc1958Fc3bb6500/2471df6cf03018ac.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ddimg/jfs/t1/171496/25/39123/9801/64cc19c2F1f5cdc87/a789e3ca4ce37107.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+这时候我们去cf的后台，就可以看到cf的自家的一年证书已经签发了&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ddimg/jfs/t1/200251/17/32450/26023/64cc19aeF3d5a985c/4b0f001deb78031f.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;第二种，&lt;br&gt;
+打开cf你的域名，域名那边有个域名区域id，要用的&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ddimg/jfs/t1/127720/39/35050/26542/64cc19a0F4d91cc29/349c8597494a27e4.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后在小鸡的ssh上打下面的命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -sX PATCH &amp;quot;https://api.cloudflare.com/client/v4/zones/你的域名区域id/ssl/universal/settings&amp;quot; -H &amp;quot;X-Auth-Email:你的邮箱&amp;quot; -H &amp;quot;X-Auth-Key:你的global api key&amp;quot; -H &amp;quot;Content-Type: application/json&amp;quot; --data &amp;quot;{\&amp;quot;certificate_authority\&amp;quot;:\&amp;quot;digicert\&amp;quot;}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;换成谷歌的话就把digicert换成google&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -sX PATCH &amp;quot;https://api.cloudflare.com/client/v4/zones/你的域名区域id/ssl/universal/settings&amp;quot; -H &amp;quot;X-Auth-Email:你的邮箱&amp;quot; -H &amp;quot;X-Auth-Key:你的global api key&amp;quot; -H &amp;quot;Content-Type: application/json&amp;quot; --data &amp;quot;{\&amp;quot;certificate_authority\&amp;quot;:\&amp;quot;google\&amp;quot;}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;换成let&#39;s的digicert 为 lets_encrypt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -sX PATCH &amp;quot;https://api.cloudflare.com/client/v4/zones/你的域名区域id/ssl/universal/settings&amp;quot; -H &amp;quot;X-Auth-Email:你的邮箱&amp;quot; -H &amp;quot;X-Auth-Key: 你的global api key&amp;quot; -H &amp;quot;Content-Type: application/json&amp;quot; --data &amp;quot;{\&amp;quot;certificate_authority\&amp;quot;:\&amp;quot;lets_encrypt\&amp;quot;}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果出现以下结果的话，就是成功了&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&amp;quot;result&amp;quot;:{&amp;quot;enabled&amp;quot;:true,&amp;quot;certificate_authority&amp;quot;:&amp;quot;lets_encrypt&amp;quot;},&amp;quot;success&amp;quot;:true,&amp;quot;errors&amp;quot;:[],&amp;quot;messages&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果没反应的话，打开cf的控制台，禁用通用ssl，然后再打命令，然后再启用，反复多试几次就行了&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ddimg/jfs/t1/167523/11/39568/38752/64cc1919F5cf7642d/2b3e8a2e2ab330b9.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+">用api把cloudflare的证书换成自家一年的</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20230627/"" data-c="
+          &lt;p&gt;1   一年的单域名的证书&lt;br&gt;
+都是国内云厂商提供的，都是要实名的&lt;br&gt;
+第一个是华为云和阿里云的encryption everywhere&lt;/p&gt;
+&lt;p&gt;华为云的怎么申请看这里&lt;br&gt;
+&lt;a href=&#34;https://www.huaweicloud.com/zhishi/sslfree.html&#34;&gt;https://www.huaweicloud.com/zhishi/sslfree.html&lt;/a&gt;&lt;br&gt;
+阿里云的&lt;a href=&#34;https://developer.aliyun.com/article/875508&#34;&gt;https://developer.aliyun.com/article/875508&lt;/a&gt;&lt;br&gt;
+trust asia的，腾讯，宝塔，ucloud,青云，好像还有几个，&lt;br&gt;
+但是记得，同一主域最多只能申请20张&lt;br&gt;
+腾讯&lt;a href=&#34;https://console.cloud.tencent.com/ssl&#34;&gt;https://console.cloud.tencent.com/ssl&lt;/a&gt;,有个免费证书，点进去&lt;br&gt;
+宝塔直接在面板里就有&lt;br&gt;
+ucloud &lt;a href=&#34;https://console.ucloud.cn/ussl/Free&#34;&gt;https://console.ucloud.cn/ussl/Free&lt;/a&gt;&lt;br&gt;
+青云&lt;a href=&#34;https://www.qingcloud.com/pricing#/SSLCertificate&#34;&gt;https://www.qingcloud.com/pricing#/SSLCertificate&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2 acme.sh申请的三个月的通配符证书&lt;br&gt;
+Let&#39;s Encrypt ,zerossl和谷歌的三个月的&lt;/p&gt;
+&lt;p&gt;系统是debian&lt;br&gt;
+①安装acme.sh&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl https://get.acme.sh | sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果报错，安装socat&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt install socat -y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;确认acme.sh已经安装，显示acme.sh版本,如果没反应的话重启下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;②切换默认ca&lt;br&gt;
+切换成Let&#39;s encrypt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --set-default-ca --server letsencrypt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;切换成gcp的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --set-default-ca --server google
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;切换成zerossl&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --set-default-ca  --server zerossl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;zerossl要邮箱的，&lt;a href=&#34;https://app.zerossl.com/signup&#34;&gt;https://app.zerossl.com/signup&lt;/a&gt;,在这边注册个账户,然后输入下面的命令就行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --register-account -m my@example.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;②.5 如果用gcp的证书的话申请gcp证书的api&lt;br&gt;
+&lt;a href=&#34;https://console.cloud.google.com/&#34;&gt;https://console.cloud.google.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;cloudshell&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud beta publicca external-account-keys create
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --register-account --server google -m xxx@gmail.com 
+--eab-hmac-key 申请到b64MacKey
+--eab-kid 申请到的keyId]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;③设置api&lt;br&gt;
+腾讯云dnspod api获取地址&lt;br&gt;
+&lt;a href=&#34;https://console.dnspod.cn/account/token/apikey&#34;&gt;https://console.dnspod.cn/account/token/apikey&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export DP_Id=&amp;quot;123456&amp;quot;
+export DP_Key=&amp;quot;abcdefg&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;阿里云dns api&lt;br&gt;
+&lt;a href=&#34;https://usercenter.console.aliyun.com/#/manage/ak&#34;&gt;https://usercenter.console.aliyun.com/#/manage/ak&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export Ali_Key=&amp;quot;AccessKeyId&amp;quot;
+export Ali_Secret=&amp;quot;AccessKeySecret&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;cloudflare的api的话&lt;br&gt;
+&lt;a href=&#34;https://dash.cloudflare.com/profile/api-tokens&#34;&gt;https://dash.cloudflare.com/profile/api-tokens&lt;/a&gt;&lt;br&gt;
+申请Global API Key&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export CF_Key=&amp;quot;Global API Key&amp;quot; 
+export CF_Email=&amp;quot;你cloudflare邮箱&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;④申请证书&lt;/p&gt;
+&lt;p&gt;腾讯云dnspod&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --issue --dns dns_dp -d xxx.com -d *.xxx.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;阿里云dns&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --issue --dns dns_ali -d xxx.com -d *.xxx.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;cloudflare&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --issue --dns dns_cf -d *.xxx.com -d xxx.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;还有半年的bypass证书，不过是单域名的，还不如阿里腾讯啥的一年的，我就没申请了&lt;/p&gt;
+">那些免费证书</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20230618/"" data-c="
+          &lt;p&gt;1安装rclone&lt;br&gt;
+①先去rclone官网找到你的版本&lt;br&gt;
+官网链接&lt;a href=&#34;https://rclone.org/downloads/&#34;&gt;https://rclone.org/downloads/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;②没sudo的话先安装下sudo，我一般用的是debian，直接&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt install sudo 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;③然后直接输入，安装rclone&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo -v ; curl https://rclone.org/install.sh | sudo bash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装完成的话长这样子&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/146365/38/35690/84687/64926039F88fae327/1f3aefdba647add4.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+2&lt;br&gt;
+获取infini-cloud的配置&lt;br&gt;
+登录状态下打开这个链接&lt;br&gt;
+&lt;a href=&#34;https://infini-cloud.net/en/modules/mypage/usage/&#34;&gt;https://infini-cloud.net/en/modules/mypage/usage/&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/199339/5/37108/54212/64926053F87d2f35f/59c38cbac2840bfa.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+把Turn on Apps Connection给勾上&lt;br&gt;
+记住你的id和密码，密码只会显示一次，记得保存下&lt;br&gt;
+三个参数，一个url，一个id，一个password，准备好&lt;br&gt;
+url的话下面3④里面用到&lt;br&gt;
+Connection ID就是3⑤user&lt;br&gt;
+Apps Password	的话3&lt;br&gt;
+3配置rclone&lt;br&gt;
+①在你的ssh中输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rclone config
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;会出来一排参数,中文啥意思，标在后面了&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;n) New remote：新建一个远程存储。
+s) Set configuration password：设置配置文件的密码。
+q) Quit config：退出配置界面。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;②新建的话输入n,会出现&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Enter name for new remote.
+name&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个你直接随便输入就行,我用的jpwp了&lt;br&gt;
+输入完名字会出现一大串的&lt;br&gt;
+③这个infini-cloud的话我们挂载的是webdav的，选择46 webdav，输入46就行了&lt;br&gt;
+④会让你输入url&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/118645/17/39984/59752/6492606eF3de46de7/49bc0b76d569d365.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+就是第二部里面的url&lt;br&gt;
+直接复制，粘贴进去就行了，然后回车&lt;br&gt;
+会出现这个，选择5&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/163402/26/35581/94450/6492609aF1bb3610d/c882a3662209d7f4.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+⑤user输入第2部里面的Connection ID&lt;br&gt;
+然后回出现下面的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;y) Yes, type in my own password：手动输入密码。
+g) Generate random password：随机生成密码。
+n) No, leave this optional password blank (default)：不设置密码
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;选择y，手动输入第2部里面的那个只出现过一次的密码，复制进去就行了，Linux 终端中输入密码时，密码不会显示在屏幕上&lt;br&gt;
+然后bearer token的话直接回车edit  advanced config，也是直接回车&lt;br&gt;
+然后keep the  jpwp remote，也是直接回车&lt;br&gt;
+然后选择q，退出就ok了&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/104230/11/29214/118196/649260c9F92e51239/ec240dddbf8a0b9b.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;4①&lt;br&gt;
+最后输入下里的命令挂载就ok了&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rclone mount jpwp: /mnt/Wanpan --config=/root/.config/rclone/rclone.conf --allow-other --allow-non-empty --vfs-cache-mode full --vfs-cache-max-age 48h --vfs-cache-max-size 5G --cache-dir /tmp/cache --vfs-read-chunk-size 128M --vfs-read-chunk-size-limit 1G --buffer-size 128M --umask 000 &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;②如果出现报错的如下报错的话&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/215031/18/33011/52133/64926b31F4543ee23/039b6b6e2be6510d.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+是没有装fuse3，debian和ubuntu的话直接用下面的命令apt安装，然后再执行上面的命令就行了&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt-get install fuse3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;③如果出现mount FUSE fs: mountpoint does not exist: /mnt/Wanpan，没有的话，输入下面命令，创建挂载点&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir -p /mnt/Wanpan
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在输入上面的命令挂载4①的命令挂载&lt;/p&gt;
+&lt;p&gt;最后输入df-h，显示jpwp的话那就是挂载成功了，1PB是唬人的，实际就是你网盘的容量,其他支持webdav的网盘，也是这样子挂载的&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/111235/18/35275/32914/64926103F5a9f9098/fd25d8cfadbee1a8.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+">rclone挂载webdav,以infini-cloud为列</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20230601/"" data-c="
+          &lt;p&gt;gridea是一个个静态博客的客户端&lt;br&gt;
+相对于hugo和hexo啥的，最大的好处就是简单，不用配置啥复杂的东西&lt;br&gt;
+缺点，就是主题很少&lt;br&gt;
+本文用github仓库部署，可以同时直接用仓库部署到github pages，cf pages，vercel，netlify，国内访问推荐vercel&lt;br&gt;
+由于这几个默认域名无法访问，需要绑个自己的域名&lt;/p&gt;
+&lt;p&gt;一   配置github&lt;br&gt;
+①没号的先注册一个&lt;br&gt;
+&lt;a href=&#34;https://github.com/&#34;&gt;https://github.com/&lt;/a&gt;&lt;br&gt;
+点击右上角singup注册一个&lt;br&gt;
+②创建github仓库&lt;br&gt;
+&lt;a href=&#34;https://github.com/new&#34;&gt;https://github.com/new&lt;/a&gt;&lt;br&gt;
+创建个username.github.io，username就是你用户名，其实也可以不这样子，仓库名随便取，只是没法用github pages而已，不影响部署到cf pages和vercel的&lt;br&gt;
+③申请token&lt;br&gt;
+&lt;a href=&#34;https://github.com/settings/tokens/new&#34;&gt;https://github.com/settings/tokens/new&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/138712/8/38368/78918/64926521F031960ec/cb3cfc5ca2b42970.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+token时间自己爱要多久，反正我直接永久，repo勾上，token只显示一次，记得保存下&lt;/p&gt;
+&lt;p&gt;二 配置gridea&lt;br&gt;
+①下载&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/getgridea/gridea/releases&#34;&gt;https://github.com/getgridea/gridea/releases&lt;/a&gt;&lt;br&gt;
+自己根据客户端下载&lt;br&gt;
+支持mac，win，linux三大系统&lt;br&gt;
+②配置&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/136809/33/36153/91652/6492653fF9c321c05/90b353d512cc395e.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+点击左边的远程，界面长这样子&lt;br&gt;
+选择github pages，&lt;br&gt;
+域名:你要绑的域名&lt;br&gt;
+仓库名称:刚刚建的github的仓库的名字:username.github.io这样子&lt;br&gt;
+分支，现在一般默认是main，自己看下你github仓库&lt;br&gt;
+仓库用户名,你github的user name&lt;br&gt;
+邮箱，你github的邮箱&lt;br&gt;
+令牌，刚刚第三步申请的token&lt;br&gt;
+cname这个不用github pages啥的话不用管，要用的话填你要绑的域名&lt;/p&gt;
+&lt;p&gt;然后保存，再点下检测远程连接的，显示成功的话就ok了&lt;br&gt;
+③备份&lt;br&gt;
+点击最左边这个按钮，点进去，有个站点源文件路径，那就是gridea的配置文件了，要备份的话直接打包上传到网盘，或者直接整个坚果云或者onedrive啥的同步直接&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/122232/5/37159/6926/64926557Fce9c857b/42cf6972fc6321ca.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+④写文章&lt;br&gt;
+支持markdown，点击左边的文章，自己写&lt;br&gt;
+⑤点击左下角同步，同步到你github&lt;br&gt;
+如果没法同步的话，设置里，自己填写&lt;/p&gt;
+&lt;p&gt;三 部署到各家平台&lt;br&gt;
+1github pages&lt;br&gt;
+找到你username.github.io的仓库，点击setting，选择pages启用，可以绑定自己的域名，不展开讲了，自己搜下&lt;/p&gt;
+&lt;p&gt;2部署到cf pages（推荐）&lt;br&gt;
+①注册cf账户&lt;br&gt;
+&lt;a href=&#34;https://cloudflare.com/&#34;&gt;https://cloudflare.com/&lt;/a&gt; 打开网站，点击注册&lt;br&gt;
+②创建pages&lt;br&gt;
+点击workes and pages&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/121938/24/36290/42514/64926574F8684e663/98fe0e45fe006324.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+创建应用程序，选择pages&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/216500/18/32020/119943/64926588Ff650ae56/b2bffe5141036a6e.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+连接到git&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/93932/25/36976/20853/649265c8Fe25b68a1/b917ba40b87b6c4b.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+连接到github账户，选择你刚刚创建的那个github仓库&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/128213/25/38585/71130/649265e4F4592b509/74239f028897df98.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后点开始设置&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/134074/26/39211/49056/6492662cFbe3351e3/4ea31568ee74d2f4.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+保存并部署&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/141947/20/32111/44055/6492664eF223b46c1/c00bc1301c3facbe.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+设置自定义域，默认的pages.dev无法访问，输入你在gridea里填的域名&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/151753/10/27188/91271/6492665fF809dd07d/53c03d3b5b71e777.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后点激活域再等会就ok了&lt;br&gt;
+浏览器打开你的域名就可以访问了&lt;/p&gt;
+&lt;p&gt;3部署到vercel&lt;br&gt;
+①&lt;a href=&#34;https://vercel.com&#34;&gt;https://vercel.com&lt;/a&gt;   点击右上角singup，再点击用github登录&lt;br&gt;
+②点击add new project,选择你的github仓库，再点击import&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/205845/18/38588/21614/649266deF9b8c081f/6987753ca55e837a.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后点击deploy直接部署&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/128408/26/40447/60437/649266d7Ffc74114a/fbecbc5cc34b20ce.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后就部署好了&lt;br&gt;
+③设置自定义域，默认的vercel.app无法访问，输入你在gridea里填的域名&lt;br&gt;
+点击setting，选择左边的domains&lt;br&gt;
+在cloudflare或者别的域名解析商那里添加一个A记录到76.76.21.21&lt;br&gt;
+或者cname到cname.vercel-dns.com&lt;br&gt;
+都是可以的，具体怎么操作看vercel的文档&lt;br&gt;
+&lt;a href=&#34;https://vercel.com/docs/concepts/projects/domains/working-with-nameservers&#34;&gt;https://vercel.com/docs/concepts/projects/domains/working-with-nameservers&lt;/a&gt;&lt;br&gt;
+vercel的亚马逊aga到国内速度明显比其他的快，推荐这个部署，但是免费只有100G的流量，不过个人博客也够用了&lt;br&gt;
+4部署到netlify&lt;br&gt;
+①&lt;a href=&#34;https://www.netlify.com/&#34;&gt;https://www.netlify.com/&lt;/a&gt;,点击右上角singup，选择github登录&lt;br&gt;
+②点击add new site&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/213472/14/32162/72634/64926683F2b66dd67/ac05c7df38f12111.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+选择import an existing project&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/122625/26/37179/23931/64926696F795b3905/f90c68cb793a4e99.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+选择你的github仓库，再点deploy site部署&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t20250620/72533/36/24257/66884/649266a0F11e2900f/68a64f0b4673fa5a.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;③设置自定义域，默认的netlify.ap无法访问，输入你在gridea里填的域名&lt;br&gt;
+点击domain setting，然后把你的域名cname过去就行了，具体怎么弄看netlify的文档&lt;br&gt;
+&lt;a href=&#34;https://docs.netlify.com/domains-https/custom-domains/&#34;&gt;https://docs.netlify.com/domains-https/custom-domains/&lt;/a&gt;&lt;/p&gt;
+">gridea部署静态博客</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20220923/"" data-c="
+          &lt;p&gt;我一台8250u的笔记本用了四年，18年买的用的有点久了，准备换了12代酷睿但续航不太行，还是上6800H的thinkbook14+，5000左右的水桶机，买之前论坛贴吧知乎B站刷了一大圈的测评&lt;br&gt;
+9月3号就到了，用了半个多月吧做个开箱，想买的话确实还不错&lt;br&gt;
+机子正面&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/142752/12/29336/24082/632da524E32e89c77/db1d71d683e0c86c.png&#34; alt=&#34;1663935771508.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+键盘&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/55142/29/21528/4608475/632da576E080bc7f6/93fa8e11459cdd9d.jpg&#34; alt=&#34;1663935879059.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+原装的话是win11家庭版的，我自己重装成了win10专业版了&lt;br&gt;
+驱动的话联想官网有下载地址的&lt;br&gt;
+https://think.lenovo.com.cn/support/driver/newdriversdownlist.aspx?yt=pt&amp;amp;categoryid=15260&amp;amp;CODEName=ThinkBook%2014%20G4+%20ARA&amp;amp;SearchType=0&amp;amp;wherePage=2&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/8844/36/20326/4185753/632da5eaE62786ce2/45361c6a6da93ba2.jpg&#34; alt=&#34;1663935961082.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/102728/20/26808/4515980/632da5caE0b1e860c/5ab08184b5bb26be.jpg&#34; alt=&#34;1663935933388.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+鲁大娘配置图&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/79835/4/21162/323945/632da60cEe87d96a0/01171e6ab2d59feb.png&#34; alt=&#34;1663936004582.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+内存海力士，固态美光，网卡是螃蟹的，屏幕隐藏了，运气不太好，摸奖失败&lt;br&gt;
+cpu是6800H,8核16线程，足够用了&lt;br&gt;
+geekbench5单核1491,多核9111，https://browser.geekbench.com/v5/cpu/17484698&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/138514/1/29677/61607/632da63cE4c3c7bc9/5b24cd2ca720611b.png&#34; alt=&#34;1663936054063.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+r23的话&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/137560/30/29937/300355/632da65bE294c15f1/7b29ae9e4462a28a.png&#34; alt=&#34;1663936081404.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+6800H的核显很强的，time spy 2506分，媲美1050ti&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/186644/3/27764/57172/632da69cE5525ec96/ae548569f5b5f8c2.png&#34; alt=&#34;1663936151392.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+笔记本原装的充电头是个大板砖&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/85836/21/29696/204133/632da6bcEdc51e020/3f6e7f5dfe25cdeb.png&#34; alt=&#34;1663936181992.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+我换成了小米ad100g氮化镓头了，同样100w，小了很多很多，还支持小米的55w的pps，就是不太好买，去小米售后买的&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/86987/24/30706/4133487/632da6d4E1a40ae4c/527345f6d1e18e3f.jpg&#34; alt=&#34;1663936203587.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+后面再把螃蟹网卡换成ax200或者ax210就完美了&lt;br&gt;
+固态的话支持两个m.2，后面看情况再加吧&lt;br&gt;
+详细的开箱可以看所长的视频https://www.bilibili.com/video/av216059622/&lt;/p&gt;
+">联想thinkbook14+开箱</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20220601/"" data-c="
+          &lt;p&gt;1安装acme.sh&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl https://get.acme.sh | sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果报错，安装socat&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt install socat -y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2确认acme.sh已经安装，显示acme.sh版本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3切换默认ca&lt;br&gt;
+切换成Let&#39;s encrypt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --set-default-ca --server letsencrypt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;切换成gcp的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --set-default-ca --server google
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;切换成zerossl&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --set-default-ca  --server zerossl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3设置api&lt;br&gt;
+腾讯云dnspod api获取地址&lt;br&gt;
+https://console.dnspod.cn/account/token/apikey&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export DP_Id=&amp;quot;123456&amp;quot;
+export DP_Key=&amp;quot;abcdefg&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;阿里云dns api&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export Ali_Key=&amp;quot;AccessKeyId&amp;quot;
+export Ali_Secret=&amp;quot;AccessKeySecret&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;4申请gcp证书的api&lt;br&gt;
+https://console.cloud.google.com/&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cloudshell
+gcloud beta publicca external-account-keys create
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --register-account --server google -m xxx@gmail.com 
+--eab-hmac-key 申请到b64MacKey
+--eab-kid 申请到的keyId]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;5申请证书&lt;br&gt;
+阿里云&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --issue --dns dns_ali -d kaino3.com -d *.kaino3.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;dnspod&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;acme.sh --issue --dns dns_dp -d kaino3.com -d *.kaino3.com
+&lt;/code&gt;&lt;/pre&gt;
+">acme.sh申请证书</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20210618/"" data-c="
+          &lt;p&gt;用了快十天了，来做个开箱&lt;br&gt;
+盒子本身&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/221947/31/13979/77861/627bf94fE1dd994e7/d44264631e4ee3b8.jpg&#34; alt=&#34;1636188498923.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+手机前面和背面&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/217488/24/20335/83649/62a95ca6E899fd457/72982fa9e2943ca1.jpg&#34; alt=&#34;3190306_1636188606.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/183115/18/24614/314733/62a95cc5Ea5c5cae1/6a01edff6a2bd674.jpg&#34; alt=&#34;2513195_1636188638.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+今年888翻车了，本来想把我的米8换成11的，但是观望了下，买个K40也不错，米8其实也不卡，但是他没有5G，它没有高刷，于是换了吧&lt;br&gt;
+刚好上周九折券买的2499用完九折券2249，然后后面有张不知道啥的100的券，找客服保价要了100块钱的京豆，实际到手2149 12+256的，真的够香了&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/219456/35/20336/1814023/62a95becE0657a599/c8d6f5cd4febd179.png&#34; alt=&#34;2840637_1636188547.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+充电头，从左往右，小米8的18W,K40送的33W头，小米65W氮化镓&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/199327/3/24337/489983/62a95cfeE4e06c187/20bc7118f9652d65.png&#34; alt=&#34;3702334_1636188223.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+手机的参数配置&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/197403/10/24627/1491764/62a95d10E099febe5/6b6f07184cddadd8.png&#34; alt=&#34;2667226_1636188438.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+娱乐兔跑了个分，70万出头，米8 当时30万出头&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/214979/20/19761/2109237/62a95d28Eaa45da54/cd38875a5f0b5edf.png&#34; alt=&#34;5542951_1636188341.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+">K40开箱</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20210310/"" data-c="
+          &lt;p&gt;&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/118027/17/26293/57326/62a95e6eE6287cb17/7f333e8c9a035936.jpg&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+移动去年整了个超级sim卡的，比起以前的nfc-sim卡只能刷公交强大很多，还能拿来当门禁卡，U盾之类的功能，但是这些不提，最有用的其实还是公交卡功能电信和联通应该也有类似的&lt;br&gt;
+支持条件，首先要手机支持nfc然后还要支持nfc-sim.可以在设置里面启动了，先确定下支持不支持，有些手机更新完了不支持，更新前支持，酷安上有人就遇到过的，先去确定下&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/31122/13/17114/362665/62a95e93E1120c575/848709e27ac84e84.png&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+大概支持的手机的话，三星除了国行系统之外的，用不了国行Samsung pay，LG和索尼的洋垃圾，或者国行不支持公交卡的，比方说索尼的国行的马克兔还有最近摩托的edge s之类的，或者小米的刷了包之后用不了自带钱包的，真的很有用，iPhone用户的话不支持&lt;br&gt;
+申请的话，可以线下营业厅，具体哪家支持的话打电话先问下&lt;br&gt;
+我是在线申请的，中国移动的手机app里面就可以申请，点击我的-补换卡业务，然后在里面申请，选择超级SIM卡，输入你的手机号，然后还要提供身份证还有刷脸实名认证的，然后就寄给你了&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/196608/21/26217/690933/62a95ebcEd47ae2cd/01785c17e5591df5.png&#34; alt=&#34;7316579_1636187664.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+我的3月1日申请的，app里面显示还是未发货，但是我前天收到了，是个中通的小信封，我当时收到一脸懵逼，就很神奇，运费还有制卡费全是免费的，&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/17483/10/17274/480509/62a95ed1Ee815252f/aba9512455815ef7.png&#34; alt=&#34;3663840_1636187827.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+收到后就在手机app里面用补换卡业务里面激活，记得先别插进去，在外面激活了再插进去，放在sim卡1&lt;br&gt;
+然后在手机设置里面选择nfc-sim卡，手机上下个和包支付，在里面划到我的里面，有个我的nfc卡，然后在里面激活，我领的是小蓝卡，因为有活动冲50送50，分5个月返还话费，真香&lt;br&gt;
+刷卡的话就和你小米系统自带的钱包一样用，具体支持的范围，我开的小蓝卡的话支持交通联合的地方都是可以用的&lt;/p&gt;
+">移动nfc-sim公交卡分享</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20210301/"" data-c="
+          &lt;p&gt;上个月1800把我用了两年的rx580满血版出给矿老板，1300买的，白用两年，不过现在好像涨到都快2300了，我好像出早了，然后用撑了用笔记本用了几天，后面干脆又把我的2600给600顺丰包邮出给坛友了，然后闲鱼650收了个2400G，然后用到了前几天想清下灰，我当时也不知道脑子怎么一热，想清灰的，然后拆的时候，忘记热机了，因为前几次我拆的时候也没热机，然后遇到了喜闻乐见的场景，拔出散热器带出cpu，用的硅脂是我朋友装机用剩下的水泥tf7，之前都是mx4，结果出事了吧，真的是常在河边走哪有不湿鞋的，由你奸似鬼，吃了老娘的洗脚水&lt;br&gt;
+贴吧甚至见到水泥硅脂有把2400G给开盖了的&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/49918/16/17793/93298/627bf77aEfdb970db/48709f95e0d38711.jpg&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+我当时看了下好像歪了3个断了1个，然后想我死了，我就又收了个200ge用了几天，然后某宝上找了个华强北的修针脚的，寄给他修好了，老板收了我60，然后反了我20，没断针，估计是我眼睛看花了当时，反正不管怎么说，这次来回加上运费花了快50了，真的50买点肉吃我不香吗&lt;br&gt;
+以后AMD的cpu拆的时候一定要热机&lt;/p&gt;
+">AMD水泥硅脂</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20200912/"" data-c="
+          &lt;p&gt;前几天狗东自营65W氮化镓打折，才123，冲动之下买了，先是正面和背面，之前因为某些原因下架了，现在修复了又上架了&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/213158/23/20478/538105/62a95f28E183c1e31/bb085857362523e0.png&#34; alt=&#34;盒子&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后打开包装，头&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/193219/37/25804/476984/62a95f1eEd2b02484/b6605f08b77c361d.png&#34; alt=&#34;头&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+还有个1米数据线&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/75430/40/19501/726740/62a95f1eE7c28f424/9d0edcf715a8e5b9.png&#34; alt=&#34;线&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+充电头本体支持5V3A,9V3A,10V5A,12V3A,15V3A,20V3.25A最大65W输出&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/76893/30/20115/419072/62a95f1cEd6059b36/e9058cefe9ae092e.png&#34; alt=&#34;参数&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+对比下我手头的，从左到右小米8的18W，65W氮化镓,魔法本的65W头，这个真的小&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/207087/35/22938/1555339/62a95f22E0605d3c0/2968825f71e71d46.png&#34; alt=&#34;对比&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+">小米65W氮化镓开箱</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20200909/"" data-c="
+          &lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/9298/8/17581/3511/62a95fd6E195e6345/ee77bb3f7bd5fc40.jpg&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;【v3.2.0.2更新】ASF升级V3全教程（Windows OS） ...&lt;br&gt;
+https://keylol.com/t301016-1-1&lt;br&gt;
+asf放在服务器上，如果你有空闲电脑的话放电脑上，然后记得挂着加速器或者302反代工具&lt;br&gt;
+steamcommunity 302 Ver.10.5&lt;br&gt;
+https://keylol.com/t339527-1-1&lt;br&gt;
+魔改版本的idle，不过steam要开着,也要挂着加速器或302反代工具[2月11更新]Idle Master HTTPS 修复版本 (更新支持Steam ...&lt;br&gt;
+https://keylol.com/t367755-1-1&lt;br&gt;
+2020-03-05更新 Idle Master Extended v1.4最终版的修补版 (Idle Master 1.4.1) 超速挂卡&lt;br&gt;
+https://keylol.com/t464477-1-1&lt;br&gt;
+手机版本的Idle Daddy(Steam挂卡)&lt;br&gt;
+酷安链接https://www.coolapk.com/game/com.steevsapps.idledaddy或者play商店直接下，用的时候挂着UU加速器，加速移动端的steam移动端&lt;br&gt;
+有旧手机用着&lt;br&gt;
+Idle Daddy使用指南，教你真正无时无刻都在挂卡 ...&lt;br&gt;
+https://keylol.com/t590533-1-1&lt;br&gt;
+(出处: 其乐 Keylol)&lt;br&gt;
+iPhone的话用这个https://apps.apple.com/cn/app/id1453118472&lt;br&gt;
+卖卡的话用脚本&lt;br&gt;
+[191018：更新6.8.1] 安利脚本：Steam Economy Enhancer&lt;br&gt;
+https://keylol.com/t311996-1-1&lt;/p&gt;
+">steam常用挂卡软件+卖卡脚本</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20200523/"" data-c="
+          &lt;p&gt;之前看到有人推荐这东西，闲鱼上捡了个，百十来块，某地装宽带送的，最便宜的wifi6路由器了&lt;br&gt;
+不推荐普通人购买，小米ax1800,华为ax3（pro）几款廉价的wifi6路由都来了，不要买整个，一没保修二固件也烂&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/165593/37/24839/386810/62a960f8E43e9a45c/87aaf943157efb13.png&#34; alt=&#34;盒子前面&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+一个usb口，两个千兆lan口，一个wan口&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/223617/40/10857/837271/62a960fbEa30534f4/d8a85b65568458c5.png&#34; alt=&#34;参数&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;盒子后面介绍的参数&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/102990/38/30134/1116760/62a960feE350948d4/0de1822385a586ba.png&#34; alt=&#34;后&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+CPU型号是BCM6750，拥有三个核心，频率1.5GHz。它集成了5G WIFI6，支持2x2mimo、1024-QAM、OFDMA，在80MHz频宽下最高无线速率1.2Gbps。&lt;/p&gt;
+">穷人的wifi6-TY400</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20200517/"" data-c="
+          &lt;p&gt;2021年更新&lt;br&gt;
+互传联盟的成员也边得多起来了，国内基本上的手机厂商都加进来了&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/193565/29/25189/319228/62a96020Ee428f725/792d82d00a94bea4.png&#34; alt=&#34;请输入图片描述&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+小米的MIUI12.5的更新带来了MIUI+的更新也变得功能越来越多了&lt;br&gt;
+https://plus.miui.com/&lt;/p&gt;
+&lt;p&gt;下载地址：https://www.mi.com/service/bijiben/drivers/A10&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/214317/20/20227/3996/62a960a2Ebb282be2/7022c5afd72b1d57.png&#34; alt=&#34;download&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+如果是iPhone和windows之间传文件的话你们可以尝试下苹果母公司-锤子的handshaker，就是两年多没更新了，不知道还能不能用了https://www.smartisan.com/apps/#/handshaker&lt;br&gt;
+具体的看下这个贴子https://www.xiaomi.cn/post/18786615&lt;br&gt;
+和这个视频https://www.bilibili.com/video/av412633455?p=1&lt;br&gt;
+感谢&lt;br&gt;
+1Q:这玩意用来干啥的？&lt;br&gt;
+类似于苹果的airdrop隔空投送，华为的一碰传之类的.电脑和手机之间传文件用的，比蓝牙和QQ快很多，当然你家里有nas或者路由插U盘的当我没说&lt;br&gt;
+2Q支持的手机型号？&lt;br&gt;
+手机不止支持小米，OPPO,VIVO.realme最近两三年的机子都是可以的，具体的看下小米社区的那个贴子里这几家去年整了个互传联盟，具体的型号自己看下支不支持，手机上不用下任何软件&lt;br&gt;
+3支持的电脑的型号&lt;br&gt;
+也不需要是小米的才行，小米社区那篇贴子只说小米的笔记本才可以，笔记本台式机其实都是可以的，主要看网卡支不支持，&lt;br&gt;
+支持的网卡型号&lt;br&gt;
+[spoil 1)Intel(英特尔)：3165/3168/7260/7265/8260/8265/9462/9560/ax200/ax201；&lt;br&gt;
+2)Qualcomm(高通)：QCA6174A(Redmi锐龙版定制)；&lt;br&gt;
+3)Realtek(瑞昱)：暂不能原生支持，需要禁用MAFSvr服务；&lt;br&gt;
+其中，Intel 7260/7265 网卡可以使用，但是速度会比较慢，ax200/ax201需要更新驱动至21.80.2.1或更高版本才能在WiFi6环境下与支持WiFi6的设备进行互传,Intel 3165需要禁用MAFSvr服务，无法保证传输速度与稳定性。[/spoil]&lt;br&gt;
+当然有些型号说不定也支持没写进去&lt;br&gt;
+我台式机插了个ax200上去加我的小米8还是能用的&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/30784/37/17177/59532/62a960b3Efbf393a7/044c8b3caec94a28.png&#34; alt=&#34;mi8&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+AMD的显卡，AMD的cpu混进去了长intel的网卡是不是很奇怪阿，还好，显卡不是nvidia的，不然就更加奇怪了，大杂烩了&lt;br&gt;
+有个小问题，记得把网卡和蓝牙的驱动更新下。还有把设置-系统-投影至此电脑弄成始终关闭就行，还有就是这个是靠蓝牙认证然后wifi传的，传的时候两边都会断网&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/babel/jfs/t1/213104/16/19985/45039/62a960b8E4ace5cea/be1e21da46110cf4.png&#34; alt=&#34;设置&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+2021年更新&lt;/p&gt;
+">小软件安利-小米互传 互传联盟的都能用（2021年更新）</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://www.kaino3.com/20190530/"" data-c="
+          &lt;p&gt;我的主力机是台3A平台的主机，平时主要用来玩游戏的，19年3月自己装的。不说了，先来张娱乐大师的配置图吧&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/134575/4/29913/219137/63b09e7dF9456864a/d83d800a3dfc1d8a.png&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+CPU:2600没有超默频状态下，六核心十二线程足够用了，最高只超过4.0/1.34V，要买的话建议买3代锐龙 3600，3500X都可以，三代锐龙单核心性能提升很大，牙膏厂那边的话9400F/9600K也行&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/72618/35/23429/190888/63b09ea9Fc467a5ef/98e317b3cdd77f4e.png&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+内存：两根8GB金士顿骇客神条2666的时序16-18-18-38颗粒都是南亚Adie，超也懒得超了,这颗粒的条子就默认用用吧  3月的时候价格很贵279一根京东自营购买，现在买的到带灯的了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/212452/22/24900/43017/63b09ed6F42776cfc/2471b1a089e6d467.png&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+后来换成500元两根的c9bjz颗粒的美光英睿达的铂胜条子8GB OC至3200C16&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/193600/11/31297/282660/63b09ed9F934c1adc/bb2c79e5f4ff5b1c.png&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+固态硬盘：PM981 250GB 。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/163437/13/33442/131892/63b09f33F56a57dd3/b8f0eaae63bfdfb3.png&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+机械硬盘：希捷酷鱼1TB京东自营289,现在京东自营的机械硬盘基本上都是叠瓦盘，只有少数几个型号不是叠瓦盘真的很差，寿命短，读取慢，只适合放数据，建议有条件的全固态吧，毕竟现在固态白菜价了。64M缓存的不是，256M的是叠瓦盘。希捷酷鱼1T,西数蓝盘1T，东芝的基本上都不是，要买直接3T起步吧。&lt;/p&gt;
+&lt;p&gt;电源：酷冷至尊:GX550, 京东自营购买399，400元以下最问稳的电源了，当时买399双十一我看到349，现在涨价了429了，五年质保全日系电容。&lt;/p&gt;
+&lt;p&gt;机箱：先马平头哥老版本的 京东自营189 能用就行，比鞋盒强就行了&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/168912/10/33630/79380/63b09ed7Fdaaa75fc/a0ca0973914d120e.png&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/170016/24/33674/146412/63b09edaF34c8b0c3/08fe0d4c781b70e4.png&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://img10.360buyimg.com/ott/jfs/t1/7897/7/20745/95432/63b09edcFc3ce657e/b87276f6358ea00c.png&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+">个人电脑配置</a>
+      </div>
+      
+    </div>
+    <div class="page">
+      <div id="page_ul"></div>
+    </div>
+  </div>
+</div>
+<script>
+  !function () {
+    let searchMask = document.querySelector('#search_mask');
+    let result = document.querySelector('#result');
+    let items = document.querySelectorAll('.item');
+    let searchBox = document.querySelector('#search');
+    let statCount = document.querySelector('#stat_count');
+    let statTimes = document.querySelector('#stat_times');
+    let pageUl = document.querySelector('#page_ul');
+    let close = document.querySelector('#close');
+    
+    close.addEventListener('click', function() {
+      searchMask.style = 'display: none;'
+    })
+
+    let finds = [];
+    let contents = [];
+    let pageSize = 10;
+    items.forEach(item => {
+      let a = item.querySelector('a');
+      contents.push({
+        title: a.innerText,
+        details: a.dataset.c,
+        link: a.href
+      })
+      item.remove();
+    })
+
+    function insertStr(soure, start, count) {
+      let newStr = soure.substr(start, count);
+      return soure.slice(0, start) + '<em>' + newStr + '</em>' + soure.slice(start + count);
+    }
+
+    pageUl.addEventListener('click', function(event) {
+      let target = event.target;
+      if (target.__proto__ === HTMLSpanElement.prototype) {
+        appendResults(parseInt(target.dataset.i));
+      }
+    })
+
+    function appendResults(index) {
+      let htmlResult = '';
+      let start = index || 0;
+      let end = Math.min(start + pageSize, finds.length);
+      for (let i = start; i < end; i++) {
+        const current = finds[i];
+        let html = current.title;
+        let sum = 0;
+        let positions = current.positions;
+        positions.forEach(position => {
+          html = insertStr(html, position.start + sum, position.count);
+          sum += 9;
+        })
+        htmlResult += `<div class="item"><a class="result-title" href="${current.link}">${html}</a></div>`;
+      }
+      result.innerHTML = htmlResult;
+      pageUl.innerHTML = '';
+      let count = finds.length / pageSize;
+      let lis = '';
+      if (start !== 0) {
+        lis += `<span class="fa fa-angle-left" data-i='${start - 1}'></span>`;
+      }
+      for (let i = 0; i < count; i++) {
+        lis += `<span class='${i === start?'current':''}' data-i='${i}'>${i+1}</span>`;     
+      }
+      if (start+1 < count) {
+        lis += `<span class="fa fa-angle-right" data-i='${start+1}'></span>`;  
+      }
+      pageUl.innerHTML = lis;
+    }
+
+    function search(delay) {
+      let timer = null
+      return function () {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          let start = Date.now();
+          let segments = searchBox.value.split(' ').filter(c => c != '');
+          if (segments.length <= 0) {
+            return;
+          }
+          finds = [];
+          let htmlResult = '';
+          contents.forEach(content => {
+            let title = content.title;
+            let positions = [];
+            let find = false;
+            segments.forEach((segment) => {
+              if (content.title.includes(segment)) {
+                find = true;
+                positions.push({
+                  start: content.title.indexOf(segment),
+                  count: segment.length
+                })
+              } else if (content.details.includes(segment)) {
+                find = true;
+              }
+            });
+            if (find) {
+              finds.push({
+                title: content.title,
+                link: content.link,
+                positions
+              });
+            }
+          })
+          appendResults(0);
+          statCount.textContent = finds.length;
+          statTimes.textContent = Date.now() - start;
+        }, delay)
+      }
+    }
+    searchBox.addEventListener('input', search(200));
+  }()
+</script>
+
+<input hidden id="copy" />
+<script>
+  !function () {
+    let times = document.querySelectorAll('.publish-time');
+    for (let i = 0; i < times.length; i++) {
+      let date = times[i].dataset.t;
+      let time = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
+      if (time < 60) {
+        str = time + '秒之前';
+      } else if (time < 3600) {
+        str = Math.floor(time / 60) + '分钟之前';
+      } else if (time >= 3600 && time < 86400) {
+        str = Math.floor(time / 3600) + '小时之前';
+      } else if (time >= 86400 && time < 259200) {
+        str = Math.floor(time / 86400) + '天之前';
+      } else {
+        str = times[i].textContent;
+      }
+      times[i].textContent = str;
+    }
+  }();
+</script>
+
+<script>
+  let language = '';
+  if (language !== '') {
+    let map = new Map();
+    if (language === 'en') {
+      map.set('search', 'Search');
+      map.set('category', 'Categories');
+      map.set('article', 'Articles');
+      map.set('tag', 'Tags');
+      map.set('top', 'Top');
+      map.set('publish', 'published');
+      map.set('minute', ' minutes');
+      map.set('read-more', 'Read More');
+      map.set('view', 'View');
+      map.set('words', ' words');
+      map.set('category-in', 'category in');
+      map.set('preview', 'Meta');
+      map.set('index', 'Toc');
+      map.set('no-archives', "You haven't created yet");
+      map.set('archives', " articles in total");
+      map.set('cloud-tags', " tags in total");
+      map.set('copyright', "Copyright: ");
+      map.set('author', "Author: ");
+      map.set('link', "Link: ");
+      map.set('leave-message', "Leave a message");
+      map.set('format', "Links Format");
+      map.set('site-name', "Name: ");
+      map.set('site-link', "Link: ");
+      map.set('site-desc', "Desc: ");
+      map.set('stat', " related results, taking ");
+      map.set('stat-time', " ms");
+      map.set('site-img', "Image: ");
+    }
+
+    if (map.size > 0) {
+      let lanElems = document.querySelectorAll('.language');
+      lanElems.forEach(elem => {
+        let lan = elem.dataset.lan, text = map.get(lan);
+        if (elem.__proto__ === HTMLInputElement.prototype) {
+          elem.placeholder = text
+        } else {
+          if (elem.dataset.count) {
+            text = elem.dataset.count + text;
+          }
+          elem.textContent = text;
+        }
+      })
+    }
+  }
+
+  window.Clipboard = (function (window, document, navigator) {
+    var textArea,
+      copy;
+
+    // 判断是不是ios端
+    function isOS() {
+      return navigator.userAgent.match(/ipad|iphone/i);
+    }
+    //创建文本元素
+    function createTextArea(text) {
+      textArea = document.createElement('textArea');
+      textArea.value = text;
+      textArea.style.width = 0;
+      textArea.style.height = 0;
+      textArea.clientHeight = 0;
+      textArea.clientWidth = 0;
+      document.body.appendChild(textArea);
+    }
+    //选择内容
+    function selectText() {
+      var range,
+        selection;
+
+      if (isOS()) {
+        range = document.createRange();
+        range.selectNodeContents(textArea);
+        selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textArea.setSelectionRange(0, 999999);
+      } else {
+        textArea.select();
+      }
+    }
+
+    //复制到剪贴板
+    function copyToClipboard() {
+      try {
+        document.execCommand("Copy")
+      } catch (err) {
+        alert("复制错误！请手动复制！")
+      }
+      document.body.removeChild(textArea);
+    }
+
+    copy = function (text) {
+      createTextArea(text);
+      selectText();
+      copyToClipboard();
+    };
+
+    return {
+      copy: copy
+    };
+  })(window, document, navigator);
+
+  function copyCode(e) {
+    if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
+      let code = e.currentTarget.querySelector('code');
+      var text = code.innerText;
+      if (e.srcElement.textContent === '复制成功') {
+        return;
+      }
+      e.srcElement.textContent = '复制成功';
+      (function (elem) {
+        setTimeout(() => {
+          if (elem.textContent === '复制成功') {
+            elem.textContent = '复制代码'
+          }
+        }, 1000);
+      })(e.srcElement)
+      Clipboard.copy(text);
+    }
+  }
+
+  let pres = document.querySelectorAll('pre');
+  pres.forEach(pre => {
+    let code = pre.querySelector('code');
+    let copyElem = document.createElement('span');
+    copyElem.classList.add('copy-code');
+    copyElem.textContent = '复制代码';
+    pre.appendChild(copyElem);
+    pre.onclick = copyCode
+  })
+
+</script>
+<script src="/media/js/motion.js"></script>
+
+
+  <script
+    src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]', {
+      speed: 200
+    });
+  </script>
+
+
+
+
+
+
+</html>
